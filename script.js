@@ -1,6 +1,6 @@
 // Initialize Firebase with your config parameters 
 firebase.initializeApp({
-    apiKey: "AIzaSyDSgoQ3mRA8pOKE_yXdyFOCyiAMi1xA704",
+    apiKey: API_KEY,
     authDomain: "plp-apps-7c6ec.firebaseapp.com",
     projectId: "plp-apps-7c6ec",
     storageBucket: "plp-apps-7c6ec.appspot.com",
@@ -42,7 +42,7 @@ function renderTasks(doc) {
 
 // Real-time listener for added and removed tasks 
 db.collection("tasks")
-    .orderBy("timestamp", "desc")
+    .orderBy("timestamp", "asc")
     .onSnapshot(snapshot => {
         const changes = snapshot.docChanges();
         changes.forEach(change => {
